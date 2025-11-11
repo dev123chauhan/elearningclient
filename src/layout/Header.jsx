@@ -1,6 +1,5 @@
 import { useState, useRef, useEffect } from "react";
 import { Link, useNavigate, useLocation } from "react-router-dom";
-import useAuth from "../hooks/useAuth";
 import { FaUser, FaSignOutAlt } from "react-icons/fa";
 import { LuLayoutDashboard } from "react-icons/lu";
 import { User } from "lucide-react";
@@ -31,6 +30,7 @@ import {
 } from "../styles/headerStyles";
 import { useModal } from "../context/ModalContext";
 import Modal from "../common/Modal";
+import { useAuth } from "../context/AuthContext";
 function Header() {
   const { user, logout } = useAuth();
   const location = useLocation();

@@ -1,10 +1,24 @@
-import  { useState } from 'react';
-import { CheckSquare, Edit2 } from 'lucide-react';
-import DatePicker from 'react-datepicker';
+import { useState } from "react";
+import { CheckSquare, Edit2 } from "lucide-react";
+import DatePicker from "react-datepicker";
 import "react-datepicker/dist/react-datepicker.css";
-import useAuth from '../../hooks/useAuth';
+import { useAuth } from "../../context/AuthContext";
 import noProfile from "../../../public/assets/noProfile.jpg";
-import { CalendarSection, Container, Name, ProfileHeader, ProfileImage, ProfileSection, ProfileTitle, Status, TodoItem, TodoSection, TodoSubtitle, TodoText, TodoTitle } from '../../styles/todoStyles';
+import {
+  CalendarSection,
+  Container,
+  Name,
+  ProfileHeader,
+  ProfileImage,
+  ProfileSection,
+  ProfileTitle,
+  Status,
+  TodoItem,
+  TodoSection,
+  TodoSubtitle,
+  TodoText,
+  TodoTitle,
+} from "../../styles/todoStyles";
 
 const Todo = () => {
   const { user } = useAuth();
@@ -32,7 +46,7 @@ const Todo = () => {
       <CalendarSection>
         <DatePicker
           selected={selectedDate}
-          onChange={date => setSelectedDate(date)}
+          onChange={(date) => setSelectedDate(date)}
           inline
         />
       </CalendarSection>
@@ -40,10 +54,16 @@ const Todo = () => {
       <TodoSection>
         <h3>To Do List</h3>
         {[
-          { title: 'Developing Restaurant Apps', subtitle: 'Programming 08:00 AM' },
-          { title: 'Integrate API' },
-          { title: 'Slicing Home Screen' },
-          { title: 'Research Objective User', subtitle: 'Product Design 02:40 PM' },
+          {
+            title: "Developing Restaurant Apps",
+            subtitle: "Programming 08:00 AM",
+          },
+          { title: "Integrate API" },
+          { title: "Slicing Home Screen" },
+          {
+            title: "Research Objective User",
+            subtitle: "Product Design 02:40 PM",
+          },
         ].map((item, index) => (
           <TodoItem key={index}>
             <CheckSquare size={18} color="#777" />

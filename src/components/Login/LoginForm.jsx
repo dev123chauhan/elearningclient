@@ -2,11 +2,11 @@ import { useState } from "react";
 import { toast } from 'sonner';
 import { useNavigate } from "react-router-dom";
 import { ClipLoader } from "react-spinners";
-import useAuth from "../../hooks/useAuth";
 import { FaRegEyeSlash, FaRegEye } from "react-icons/fa";
 import { useModal } from "../../context/ModalContext";
 import { Button, CheckboxContainer, CheckboxInput, CheckboxLabel, CheckboxWrapper, ForgotPassword, Form, Input, InputLabel, InputWrapper, ShowPasswordIcon } from "../../styles/loginFormStyles";
 import { authService } from "../../api/services/authService";
+import { useAuth } from "../../context/AuthContext";
 export default function LoginForm() {
   const { closeModal } = useModal(); // ADD
   const [showPassword, setShowPassword] = useState(false);
