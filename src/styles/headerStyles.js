@@ -255,10 +255,3 @@ export const SidebarNavLink = styled(Link)`
     color: #f48c06;
   }
 `;
-
-export const BellIcon = styled(Bell)`
-  color: ${({ $isHomePage, $scrolled }) =>
-    $isHomePage ? ($scrolled ? "#333" : "white") : "#333"};
-  cursor: pointer;
-  transition: color 0.3s ease;
-`;

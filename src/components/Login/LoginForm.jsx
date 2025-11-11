@@ -24,11 +24,9 @@ export default function LoginForm() {
       login(data.token);
       toast.success('Successfully logged in!');
       closeModal(); 
-      setTimeout(() => {
-        navigate('/');
-      }, 1000);
+      navigate('/');
     } catch (error) {
-      toast.error('Login failed. Please check your credentials.');
+      toast.error('Login failed. Please check your credentials.', error);
     } finally {
       setLoading(false);
     }
