@@ -1,13 +1,12 @@
 import { useEffect, useState } from 'react';
 import { Skeleton } from 'antd';
-import noProfile from "../../../public/assets/noProfile.jpg";
+import {useAuth} from "../../context/AuthContext";
 import { IoMdTime } from "react-icons/io";
 import { RxDashboard } from "react-icons/rx";
 import { useNavigate } from 'react-router-dom';
 import { CardGrid, SkeletonCard } from '../../styles/cardStyles';
 import Card from '../../common/Card';
 import { courseService } from '../../api/services/courseService';
-import { useAuth } from '../../context/AuthContext';
 
 function cropText(text, maxLength) {
   if (text?.length <= maxLength) {
@@ -99,9 +98,7 @@ const CoursesList = ({ searchTerm, subjectFilter }) => {
             }
           ]}
           footer={{
-            profileImage: user?.profileImage 
-              ? `http://localhost:8000/uploads/${user.profileImage}` 
-              : noProfile,
+            profileImage: user?.profileImage,
             profileName: user?.username,
             price: course.price
           }}
